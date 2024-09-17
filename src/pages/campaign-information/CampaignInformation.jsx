@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import './CampaignInformation.scss'
 
 const CampaignInformation = () => {
 
     const [fetchedData, setFetchedData] = useState(null); // To store fetched campaign data
-    
+
     // Fetch campaign data by ID (GET /api/Campaign/{id})
   useEffect(() => {
     if (campaignId) {
@@ -29,23 +30,23 @@ const CampaignInformation = () => {
             <strong>Campaign Name:</strong> {fetchedData.campaignName}
           </p>
           <p>
-            <strong>Campaign Description:</strong>{" "}
+            <strong>Campaign Description:</strong>
             {fetchedData.campaignDescription}
           </p>
           <p>
-            <strong>Start Date:</strong>{" "}
+            <strong>Start Date:</strong>
             {new Date(fetchedData.startDate).toLocaleDateString()}
           </p>
           <p>
-            <strong>End Date:</strong>{" "}
+            <strong>End Date:</strong>
             {new Date(fetchedData.endDate).toLocaleDateString()}
           </p>
           <p>
-            <strong>Digest Campaign:</strong>{" "}
+            <strong>Digest Campaign:</strong>
             {fetchedData.digestCampaign ? "Yes" : "No"}
           </p>
           <p>
-            <strong>Linked Keywords:</strong>{" "}
+            <strong>Linked Keywords:</strong>
             {fetchedData.linkedKeywords.join(", ")}
           </p>
           <p>

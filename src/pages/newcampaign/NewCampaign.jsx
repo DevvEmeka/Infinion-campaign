@@ -181,11 +181,8 @@ const NewCampaigns = () => {
           </div>
 
           {/* REACT SELECT ====== */}
-          <div
-            className="form-group-6"
-            style={{ width: "300px", margin: "100px auto" }}
-          >
-            <h3>Creatable Multi-Select Input</h3>
+          <div className="form-group-6">
+            <p>Linked Keywords</p>
             <CreatableSelect
               components={components} // Disable dropdown indicator
               inputValue={inputValue} // Controlled input value
@@ -195,7 +192,7 @@ const NewCampaigns = () => {
               onChange={(newValue) => setValue(newValue)} // Update selected options
               onInputChange={(newValue) => setInputValue(newValue)} // Update input value on typing
               onKeyDown={handleKeyDown} // Handle keypress events (Enter/Tab)
-              placeholder="Type something and press enter..."
+              placeholder="To add keywords, type your keyword and press enter"
               value={value} // Selected options displayed
             />
             <div>
@@ -228,7 +225,10 @@ const NewCampaigns = () => {
             </select>
           </div>
 
-          <button type="submit">Submit</button>
+          <div className="form-btn">
+            <button className="btn-submit">Stop Campaign</button>
+            <button className="btn-col" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     </section>
